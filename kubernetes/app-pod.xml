@@ -7,11 +7,13 @@ metadata:
 spec:
   containers:
   - name: springboot-monitoring-app
-    image: springbootdemoappregistry.azurecr.io/springboot-monitoring-app
+    image: springbootdemoappregistry.azurecr.io/springboot-monitoring-app:v1
     resources:
       limits:
         memory: "128Mi"
         cpu: "500m"
     ports:
       - containerPort: 3000
+  imagePullSecrets:
+  - name: acrregistrykey
 
