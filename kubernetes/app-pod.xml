@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myspringbootapp
+  labels:
+    name: monitoringdemoapp
+spec:
+  containers:
+  - name: springboot-monitoring-app
+    image: springbootdemoappregistry.azurecr.io/springboot-monitoring-app
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 3000
+
